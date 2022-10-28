@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\bin\Debug\net5.0\CrmUpSchool.EntityLayer.deps.json
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\bin\Debug\net5.0\CrmUpSchool.EntityLayer.runtimeconfig.json
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\bin\Debug\net5.0\CrmUpSchool.EntityLayer.runtimeconfig.dev.json
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\bin\Debug\net5.0\CrmUpSchool.EntityLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\bin\Debug\net5.0\CrmUpSchool.EntityLayer.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.AssemblyInfo.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\refint\CrmUpSchool.EntityLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\CrmUpSchool.EntityLayer.genruntimeconfig.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.EntityLayer\obj\Debug\net5.0\ref\CrmUpSchool.EntityLayer.dll
