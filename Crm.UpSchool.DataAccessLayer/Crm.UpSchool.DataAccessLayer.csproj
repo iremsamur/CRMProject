@@ -21,8 +21,4 @@
     <ProjectReference Include="..\CrmUpSchool.EntityLayer\CrmUpSchool.EntityLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="EntityFramework\" />
-  </ItemGroup>
-
 </Project>
