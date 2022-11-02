@@ -29,6 +29,8 @@ namespace CrmUpSchool.UILayer
         {
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddScoped<IEmployeeService, EmployeeManager>();
+            services.AddScoped<IEmployeeDal, EfEmployeeDal>();
             services.AddControllersWithViews();
         }
 

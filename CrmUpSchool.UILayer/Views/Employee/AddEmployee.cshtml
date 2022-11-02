@@ -1,0 +1,37 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+}
+
+<h1>Yeni Personel Sayfası</h1>
+
+<form method="post">
+    <label>Personel Adı</label>
+    <input type="text" asp-for="EmployeeName" class="form-control" />
+    <span asp-validation-for="EmployeeName" class="text-danger"></span><!--Eğer validasyona bu alan uymazsa altta uyarı mesajını vermesini span etiketi ile sağlarız-->
+    <br />
+    <label>Personel Soyadı</label>
+    <input type="text" asp-for="EmployeeSurname" class="form-control" />
+    <span asp-validation-for="EmployeeSurname" class="text-danger"></span>
+    <br />
+    <label>Personel Maili</label>
+    <input type="text" asp-for="EmployeeMail" class="form-control" />
+    <span asp-validation-for="EmployeeMail" class="text-danger"></span>
+    <br />
+    <label>Personel Görsel</label>
+    <input type="text" asp-for="EmployeeImage" class="form-control" />
+    <span asp-validation-for="EmployeeImage" class="text-danger"></span>
+    <br />
+    <label>Kategori</label>
+    <input type="text" asp-for="CategoryID" class="form-control" />
+    <span asp-validation-for="CategoryID" class="text-danger"></span>
+    <br />
+    <button class="btn btn-primary">Personeli Kaydet</button>
+    
+
+
+
+    </form>
+
+

@@ -34,7 +34,7 @@ using CrmUpSchool.EntityLayer.Concrete;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2131aa8584844149f929c1103d0fa9b724bf5687", @"/Views/Customer/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f861e19a982ca4e9c90db774f8105f64f95df089", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b3aa0f20dcbd6df4ca6b0c7c436233d1145dc4e1", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Customer_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Customer>>
     #nullable disable

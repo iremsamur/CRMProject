@@ -11,5 +11,13 @@ namespace CrmUpSchool.EntityLayer.Concrete
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
+
+        //Employee ilişkisi için bu tarafa tanımlama yapmam gerekir.
+        //ilişkide çok kısımı
+        //list veya collection ikisi ilede olur.
+        public ICollection<Employee> Employees
+        {
+            get; set;
+        }
     }
 }

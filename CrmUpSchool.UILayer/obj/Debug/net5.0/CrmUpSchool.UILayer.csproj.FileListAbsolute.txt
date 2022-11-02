@@ -153,3 +153,9 @@ C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\o
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Shared\_CrmLayout.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Category\AddCategory.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\CrmUpSchool.UILayer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Employee\AddEmployee.cshtml.g.cs
