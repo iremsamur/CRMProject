@@ -19,7 +19,7 @@ namespace Crm.UpSchool.DataAccessLayer.EntityFramework
             {
                 var employee = context.Employees.Find(id);
                 employee.EmployeeStatus = false;
-                Update(employee);
+                Update(employee);//Bu update'i GenericRepository'den kullanıyoruz
                 
             }
         }

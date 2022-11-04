@@ -3,16 +3,21 @@ using Crm.UpSchool.BusinessLayer.ValidationRules;
 using CrmUpSchool.EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;
+        private readonly ICategoryService _categoryService;//kategori listesini getirmek için CategoryService'ide dahil ettim.
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService,ICategoryService categoryService)
         {
             _employeeService = employeeService;
+            _categoryService = categoryService;
         }
 
         public IActionResult Index()
@@ -23,7 +28,19 @@ namespace CrmUpSchool.UILayer.Controllers
         [HttpGet]
         public IActionResult AddEmployee()
         {
-            
+
+            //sayfa yüklendiğinde dropdown içinde kategori listesini getirecek
+
+            List<SelectListItem> categoryValues = (from x in _categoryService.TGetList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.CategoryName,//dropdown içinde görünecek kısım. CategoryName text olur
+                                                       Value = x.CategoryID.ToString()//seçim yapıldığında id'sini alan kısım ise Value Category.Id olur
+
+
+
+                                                   }).ToList();
+            ViewBag.v = categoryValues;//frontend tarafına bu listeyi viewbag ile aktarırız
             return View();
         }
         [HttpPost]
@@ -70,6 +87,43 @@ namespace CrmUpSchool.UILayer.Controllers
                
 
         }
+        public IActionResult ChangeStatusToFalse(int id)
+        {
+
+            _employeeService.TChangeEmployeeStatusToFalse(id);
+           
+           
+            return RedirectToAction("Index");
+        }
+        public IActionResult ChangeStatusToTrue(int id)
+        {
+
+            _employeeService.TChangeEmployeeStatusToTrue(id);
+            return RedirectToAction("Index");
+        
+       }
+
+        //güncelleme
+        [HttpGet]
+        public IActionResult UpdateEmployee(int id)
+        {
+            var values = _employeeService.TGetByID(id);
+            return View(values);
+
+        
+        }
+        [HttpPost]
+        public IActionResult UpdateEmployee(Employee employee)
+        {
+            var values = _employeeService.TGetByID(employee.EmployeeID);//güncellenecek olanda status, tarih gibi güncellenmeyecek olan bilgilere mevcut değerini atamak için
+            //var olan mevcut bilgileri getirmek için bunu yazdık.
+            employee.EmployeeStatus = values.EmployeeStatus;//statusü güncellememesi default değer atamaması eski değeri ne ise onu ataması için bunu yaptık.
+
+            _employeeService.TUpdate(employee);
+            return RedirectToAction("Index");
+
+        }
+
 
 
     }

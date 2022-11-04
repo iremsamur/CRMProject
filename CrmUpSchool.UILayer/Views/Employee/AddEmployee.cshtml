@@ -23,9 +23,12 @@
     <input type="text" asp-for="EmployeeImage" class="form-control" />
     <span asp-validation-for="EmployeeImage" class="text-danger"></span>
     <br />
-    <label>Kategori</label>
-    <input type="text" asp-for="CategoryID" class="form-control" />
-    <span asp-validation-for="CategoryID" class="text-danger"></span>
+    <label>Personel Departmanı</label>
+   
+    <!--html helper kullanıyoruz-->
+    @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.v, new { @class = "form-control" })<!--departmanı getirmiş oldum. Böylece kullanıcının
+        seçtiği kategorinin id'si buradaki ID'ye gelir. (List<SelectListItem>)ViewBag.v bu ifade CategoryID'ye ait değerleri taşır.'
+    -->
     <br />
     <button class="btn btn-primary">Personeli Kaydet</button>
     

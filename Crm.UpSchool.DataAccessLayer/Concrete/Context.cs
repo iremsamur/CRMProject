@@ -1,4 +1,5 @@
 ﻿using CrmUpSchool.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace Crm.UpSchool.DataAccessLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
+        //AppUser AspNetIdentityUser'da özelleştirilmiş alanları tanımladığım sınıf
+        //Bu gönderdiğim int ise tablomun id'si varsayılan string geldiği için onu int yapmak istiyorum
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

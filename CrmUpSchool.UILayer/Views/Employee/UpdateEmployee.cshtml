@@ -1,0 +1,31 @@
+﻿@model Employee //viewsimport içinde zaten namespace'i tanımlı olduğu için sadece modeli tanımlıyorum
+@{
+    ViewData["Title"] = "UpdateEmployee";
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+}
+
+<h1>Personel Güncelleme Sayfası</h1>
+<form method="post">
+    <input type="hidden" asp-for="EmployeeID" /> <!--Kullanıcıya ID'yi göstermez. Ama arka planda ID'yi alır-->
+    <label>Personel Adı</label>
+    <input type="text" asp-for="EmployeeName" class="form-control"/>
+    <br />
+    <label>Personel Soyadı</label>
+    <input type="text" asp-for="EmployeeSurname" class="form-control" />
+    <br />
+    <label>Personel Mail</label>
+    <input type="text" asp-for="EmployeeMail" class="form-control" />
+    <br />
+    <label>Personel Görseli</label>
+    <input type="text" asp-for="EmployeeImage" class="form-control" />
+    <br />
+    <label>Personel Departmanı</label>
+    <input type="text" asp-for="CategoryID" class="form-control" />
+    <br />
+    <button class="btn btn-warning">Personeli Güncelle</button>
+
+
+
+</form>
+
+
