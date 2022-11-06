@@ -28,6 +28,7 @@ namespace CrmUpSchool.UILayer.Controllers
             bool check = result.Succeeded;
             if (result.Succeeded)
             {
+                ViewBag.registerIsSucceeded = true;
                 return RedirectToAction("Index", "Login");
             }
         
