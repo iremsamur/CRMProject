@@ -1,10 +1,13 @@
 using Crm.UpSchool.BusinessLayer.Abstract;
 using Crm.UpSchool.BusinessLayer.Concrete;
 using Crm.UpSchool.DataAccessLayer.Abstract;
+using Crm.UpSchool.DataAccessLayer.Concrete;
 using Crm.UpSchool.DataAccessLayer.EntityFramework;
+using CrmUpSchool.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,6 +34,9 @@ namespace CrmUpSchool.UILayer
             services.AddScoped<ICategoryDal, EfCategoryDal>();
             services.AddScoped<IEmployeeService, EmployeeManager>();
             services.AddScoped<IEmployeeDal, EfEmployeeDal>();
+            //Identity için aþaðýdakileri ekleriz
+            services.AddDbContext<Context>();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar
             services.AddControllersWithViews();
         }
 
@@ -51,6 +57,7 @@ namespace CrmUpSchool.UILayer
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();//login iþlemi için bunu ekliyoruz
 
             app.UseAuthorization();
 
