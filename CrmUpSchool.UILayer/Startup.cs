@@ -4,6 +4,7 @@ using Crm.UpSchool.DataAccessLayer.Abstract;
 using Crm.UpSchool.DataAccessLayer.Concrete;
 using Crm.UpSchool.DataAccessLayer.EntityFramework;
 using CrmUpSchool.EntityLayer.Concrete;
+using CrmUpSchool.UILayer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,7 +37,7 @@ namespace CrmUpSchool.UILayer
             services.AddScoped<IEmployeeDal, EfEmployeeDal>();
             //Identity için aþaðýdakileri ekleriz
             services.AddDbContext<Context>();
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar
+            services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar
             services.AddControllersWithViews();
         }
 

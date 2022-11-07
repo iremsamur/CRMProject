@@ -1,4 +1,5 @@
 ﻿using CrmUpSchool.EntityLayer.Concrete;
+using CrmUpSchool.UILayer.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -35,5 +36,49 @@ namespace CrmUpSchool.UILayer.Controllers
 
             return View();
         }
+
+        //Register
+        [HttpGet]
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+        //Register
+        [HttpPost]
+        public async Task<IActionResult> SignUp(UserSignUpModel userSignUp)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser appUser = new AppUser()
+                {
+                    UserName = userSignUp.Username,
+                    Name = userSignUp.Name,
+                    Surname = userSignUp.Surname,
+                    Email = userSignUp.Email,
+                    PhoneNumber = userSignUp.PhoneNumber
+                };
+                if (userSignUp.Password == userSignUp.ConfirmPassword)
+                {
+                    //eğer şifreler uyuşuyorsa ona göre işlem yapsın
+                    var result = await _userManager.CreateAsync(appUser, userSignUp.Password);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                    else
+                    {
+                        foreach (var item in result.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);//hataları UI tarafında bana göstermesi için gerekli 
+                        }
+                    }
+                }
+                
+
+            }
+            
+            return View();
+        }
+
     }
 }
