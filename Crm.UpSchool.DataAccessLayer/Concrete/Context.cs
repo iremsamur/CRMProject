@@ -19,6 +19,29 @@ namespace Crm.UpSchool.DataAccessLayer.Concrete
 
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+         
+            //AppUser sınıfından hem görevi atayan kişi hemde görevin atandığı kişi için
+            //ilişki kuruluyor. Kurulan ilişkinin foreign key, hasone, withmany değerleri burada tanımlanır
+
+            modelBuilder.Entity<EmployeeTask>()
+                .HasOne(x => x.AssigneeUser)
+                .WithMany(y => y.EmployeeTasksAssignee)
+                .HasForeignKey(z => z.TaskAssigneeUserID)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+            //şimdi aynı işlemi Alıcı için yapalım
+            modelBuilder.Entity<EmployeeTask>()
+                .HasOne(x => x.FollowerUser)
+                .WithMany(y => y.EmployeeTasksFollower)
+                .HasForeignKey(z => z.FollowerUserID)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+            base.OnModelCreating(modelBuilder);
+
+
+
+
+        }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
 
@@ -26,6 +49,7 @@ namespace Crm.UpSchool.DataAccessLayer.Concrete
         {
             get; set;
         }
+        public DbSet<EmployeeTask> EmployeeTasks { get; set; }
 
 
     }

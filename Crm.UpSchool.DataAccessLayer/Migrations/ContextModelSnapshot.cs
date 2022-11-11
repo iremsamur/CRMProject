@@ -201,6 +201,40 @@ namespace Crm.UpSchool.DataAccessLayer.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.EmployeeTask", b =>
+                {
+                    b.Property<int>("EmployeeTaskID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Details")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FollowerUserID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TaskAssigneeUserID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeTaskID");
+
+                    b.HasIndex("FollowerUserID");
+
+                    b.HasIndex("TaskAssigneeUserID");
+
+                    b.ToTable("EmployeeTasks");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")
@@ -313,6 +347,23 @@ namespace Crm.UpSchool.DataAccessLayer.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.EmployeeTask", b =>
+                {
+                    b.HasOne("CrmUpSchool.EntityLayer.Concrete.AppUser", "FollowerUser")
+                        .WithMany("EmployeeTasksFollower")
+                        .HasForeignKey("FollowerUserID")
+                        .IsRequired();
+
+                    b.HasOne("CrmUpSchool.EntityLayer.Concrete.AppUser", "AssigneeUser")
+                        .WithMany("EmployeeTasksAssignee")
+                        .HasForeignKey("TaskAssigneeUserID")
+                        .IsRequired();
+
+                    b.Navigation("AssigneeUser");
+
+                    b.Navigation("FollowerUser");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("CrmUpSchool.EntityLayer.Concrete.AppRole", null)
@@ -362,6 +413,13 @@ namespace Crm.UpSchool.DataAccessLayer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.AppUser", b =>
+                {
+                    b.Navigation("EmployeeTasksAssignee");
+
+                    b.Navigation("EmployeeTasksFollower");
                 });
 
             modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.Category", b =>

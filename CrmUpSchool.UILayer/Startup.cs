@@ -35,6 +35,8 @@ namespace CrmUpSchool.UILayer
             services.AddScoped<ICategoryDal, EfCategoryDal>();
             services.AddScoped<IEmployeeService, EmployeeManager>();
             services.AddScoped<IEmployeeDal, EfEmployeeDal>();
+            services.AddScoped<IEmployeeTaskService, EmployeeTaskManager>();
+            services.AddScoped<IEmployeeTaskDal, EfEmployeeTaskDal>();
             //Identity için aþaðýdakileri ekleriz
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar
@@ -67,6 +69,14 @@ namespace CrmUpSchool.UILayer
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+            //areas kullanýmý için bunu ekliyoruz
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
             });
         }
     }

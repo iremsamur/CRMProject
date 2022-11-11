@@ -171,3 +171,6 @@ C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\o
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Register\SignUp.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\Index.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\AddRole.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\EmployeeTask\Index.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\EmployeeTask\AddTask.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\EmployeeArea\Index.cshtml.g.cs

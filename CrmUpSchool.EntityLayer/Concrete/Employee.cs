@@ -44,5 +44,6 @@ namespace CrmUpSchool.EntityLayer.Concrete
         {
             get; set;
         }
+        
     }
 }

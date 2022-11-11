@@ -25,5 +25,7 @@ namespace CrmUpSchool.EntityLayer.Concrete
         {
             get; set;
         }
+        public List<EmployeeTask> EmployeeTasksFollower { get; set; }
+        public List<EmployeeTask> EmployeeTasksAssignee { get; set; }
     }
 }

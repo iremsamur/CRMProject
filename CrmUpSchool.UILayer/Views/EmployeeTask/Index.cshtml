@@ -1,0 +1,39 @@
+﻿@model List<EmployeeTask>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+    int count = 0;
+}
+
+<h3>Görev Listesi</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Durum</th>
+        <th>Tarih</th>
+        <th>Görevin Sorumlu Olduğu Personel</th>
+        <th>Görevi Atayan Kişi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Title</td>
+            <td>@item.Status</td>
+            <td>@item.Date.ToString("dd.MMM.yyyy")</td>
+            <td>@item.AssigneeUser.Name @item.AssigneeUser.Surname</td>
+            <td>@item.FollowerUser.Name @item.FollowerUser.Surname</td>
+            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/EmployeeTask/AddTask/" class="btn btn-outline-info">Yeni Görev Girişi</a>
+
