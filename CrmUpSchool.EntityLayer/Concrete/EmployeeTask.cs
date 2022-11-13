@@ -19,5 +19,7 @@ namespace CrmUpSchool.EntityLayer.Concrete
         public int FollowerUserID { get; set; }//görevin atandığı kişi
         public AppUser FollowerUser { get; set; }//görevi atayan kişi
 
+        public List<EmployeeTaskDetail> EmployeeTaskDetails { get; set; }
+
     }
 }

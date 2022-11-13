@@ -23,6 +23,16 @@ namespace Crm.UpSchool.DataAccessLayer.EntityFramework
                 return values;
             }
         }
+
+        public List<EmployeeTask> GetEmployeeTaskById(int id)
+        {
+           using(var context = new Context())
+            {
+                var values = context.EmployeeTasks.Where(x => x.TaskAssigneeUserID == id).ToList();
+                return values;
+            }
+        }
+
         public List<EmployeeTask> GetEmployeeTaskswithFollowerAndAssigneeUser()
         {
             using (var context = new Context())

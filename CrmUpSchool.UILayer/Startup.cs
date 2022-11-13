@@ -37,6 +37,8 @@ namespace CrmUpSchool.UILayer
             services.AddScoped<IEmployeeDal, EfEmployeeDal>();
             services.AddScoped<IEmployeeTaskService, EmployeeTaskManager>();
             services.AddScoped<IEmployeeTaskDal, EfEmployeeTaskDal>();
+            services.AddScoped<IEmployeeTaskDetailService, EmployeeTaskDetailManager>();
+            services.AddScoped<IEmployeeTaskDetailDal, EfEmployeeTaskDetailDal>();
             //Identity için aþaðýdakileri ekleriz
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar

@@ -11,5 +11,9 @@ namespace Crm.UpSchool.DataAccessLayer.Abstract
     {
         List<EmployeeTask> GetEmployeeTaskByEmployee();//sadece görevin atandığı kişi bilgisini getirir.
         List<EmployeeTask> GetEmployeeTaskswithFollowerAndAssigneeUser();//assignee ve follower bilgisi ile görevleri getirir.
+
+        List<EmployeeTask> GetEmployeeTaskById(int id);//giriş yapan kullanıcının 
+
+    //id değerine göre onun görevlerini getirecek
     }
 }

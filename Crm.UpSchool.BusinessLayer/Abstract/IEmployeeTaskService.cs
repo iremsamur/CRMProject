@@ -11,5 +11,6 @@ namespace Crm.UpSchool.BusinessLayer.Abstract
     {
         List<EmployeeTask> TGetEmployeeTaskByEmployee();
         List<EmployeeTask> TGetEmployeeTaskswithFollowerAndAssigneeUser();
+        List<EmployeeTask> TGetEmployeeTaskById(int id);
     }
 }

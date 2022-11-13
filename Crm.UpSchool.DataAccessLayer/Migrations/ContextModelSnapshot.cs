@@ -235,6 +235,29 @@ namespace Crm.UpSchool.DataAccessLayer.Migrations
                     b.ToTable("EmployeeTasks");
                 });
 
+            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.EmployeeTaskDetail", b =>
+                {
+                    b.Property<int>("EmployeeTaskDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeTaskID")
+                        .HasColumnType("int");
+
+                    b.HasKey("EmployeeTaskDetailID");
+
+                    b.HasIndex("EmployeeTaskID");
+
+                    b.ToTable("EmployeeTaskDetail");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")
@@ -364,6 +387,17 @@ namespace Crm.UpSchool.DataAccessLayer.Migrations
                     b.Navigation("FollowerUser");
                 });
 
+            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.EmployeeTaskDetail", b =>
+                {
+                    b.HasOne("CrmUpSchool.EntityLayer.Concrete.EmployeeTask", "EmployeeTask")
+                        .WithMany("EmployeeTaskDetails")
+                        .HasForeignKey("EmployeeTaskID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmployeeTask");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("CrmUpSchool.EntityLayer.Concrete.AppRole", null)
@@ -425,6 +459,11 @@ namespace Crm.UpSchool.DataAccessLayer.Migrations
             modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.Category", b =>
                 {
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.EmployeeTask", b =>
+                {
+                    b.Navigation("EmployeeTaskDetails");
                 });
 #pragma warning restore 612, 618
         }

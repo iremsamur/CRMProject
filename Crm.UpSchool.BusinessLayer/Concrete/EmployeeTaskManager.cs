@@ -52,5 +52,10 @@ namespace Crm.UpSchool.BusinessLayer.Concrete
         {
             _employeeTaskDal.Update(t);
         }
+
+        public List<EmployeeTask> TGetEmployeeTaskById(int id)
+        {
+            return _employeeTaskDal.GetEmployeeTaskById(id);
+        }
     }
 }

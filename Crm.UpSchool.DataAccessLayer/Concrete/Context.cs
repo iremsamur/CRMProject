@@ -50,6 +50,7 @@ namespace Crm.UpSchool.DataAccessLayer.Concrete
             get; set;
         }
         public DbSet<EmployeeTask> EmployeeTasks { get; set; }
+        public DbSet<EmployeeTaskDetail> EmployeeTaskDetail { get; set; }
 
 
     }
