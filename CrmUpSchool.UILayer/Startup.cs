@@ -5,9 +5,11 @@ using Crm.UpSchool.DataAccessLayer.Concrete;
 using Crm.UpSchool.DataAccessLayer.EntityFramework;
 using CrmUpSchool.EntityLayer.Concrete;
 using CrmUpSchool.UILayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +17,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CrmUpSchool.UILayer
@@ -39,10 +42,28 @@ namespace CrmUpSchool.UILayer
             services.AddScoped<IEmployeeTaskDal, EfEmployeeTaskDal>();
             services.AddScoped<IEmployeeTaskDetailService, EmployeeTaskDetailManager>();
             services.AddScoped<IEmployeeTaskDetailDal, EfEmployeeTaskDetailDal>();
+            services.AddScoped<IMessageService, MessageManager>();
+            services.AddScoped<IMessageDal, EfMessageDal>();
+            services.AddScoped<IAppUserService, AppUserManager>();
+            services.AddScoped<IAppUserDal, EfAppUserDal>();
             //Identity için aþaðýdakileri ekleriz
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar
             services.AddControllersWithViews();
+
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                            .RequireAuthenticatedUser()//bu kýsým tüm sayfalarda yetkilendirme yani kullanýcý login olmadan hiçbir sayfaya eriþememesini saðlar
+                            .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+
+
+            });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Login/Index";//kullanýcý login olmadan eriþmeye çalýþýrsa login sayfasýna yönlendirilmesini saðlar
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

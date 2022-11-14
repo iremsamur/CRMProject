@@ -1,10 +1,12 @@
 ﻿using CrmUpSchool.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
+    [AllowAnonymous]//login sayfasına erişimin kısıtlanmaması için bunu veriyoruz
     public class LoginController : Controller
     {
 

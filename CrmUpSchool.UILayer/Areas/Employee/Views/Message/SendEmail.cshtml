@@ -1,0 +1,22 @@
+﻿@model MailRequest
+@{
+    ViewData["Title"] = "SendEmail";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h1>Mail Gönderme</h1>
+<form method="post">
+    <label>Alıcı Maili</label>
+    <input type="text" class="form-control" asp-for="ReceiverMail" />
+
+    <br />
+    <label>Mesaj Konusu</label>
+    <input type="text" class="form-control" asp-for="EmailSubject" />
+    <br />
+    <label>Mesaj</label>
+    <textarea cols="3" rows="5" class="form-control" asp-for="EmailContent"></textarea>
+    <br />
+    <button class="btn btn-outline-info">Gönder</button>
+
+</form>
+

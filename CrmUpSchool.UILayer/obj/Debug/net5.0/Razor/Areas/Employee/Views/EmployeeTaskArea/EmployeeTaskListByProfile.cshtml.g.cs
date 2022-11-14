@@ -33,8 +33,15 @@ using CrmUpSchool.EntityLayer.Concrete;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\Areas\Employee\Views\_ViewImports.cshtml"
+using CrmUpSchool.UILayer.Areas.Employee.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"45b552a968b28f52ba4b3ccb758b6c2e5c8695c8", @"/Areas/Employee/Views/EmployeeTaskArea/EmployeeTaskListByProfile.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b3aa0f20dcbd6df4ca6b0c7c436233d1145dc4e1", @"/Areas/Employee/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ab1bea9cd889669266f33b394e203953bc038acb", @"/Areas/Employee/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Employee_Views_EmployeeTaskArea_EmployeeTaskListByProfile : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<EmployeeTask>>
     #nullable disable

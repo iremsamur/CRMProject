@@ -178,3 +178,14 @@ C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\o
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\EmployeeTaskArea\EmployeeTaskListByProfile.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\_ViewImports.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\EmployeeTaskDetail\Index.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\Message\SendMessage.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\MimeKit.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\System.Formats.Asn1.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\MailKit.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\Message\SendEmail.cshtml.g.cs
