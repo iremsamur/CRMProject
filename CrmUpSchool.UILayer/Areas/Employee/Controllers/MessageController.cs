@@ -46,6 +46,14 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
             message.SenderEmail = user.Email;
             message.SenderName = user.Name+" "+user.Surname;
             _messageService.TInsert(message);//mesaj gönder
+
+            //mesajı mail atma
+            MailRequest mailRequest = new MailRequest();
+            mailRequest.EmailContent = message.MessageContent;
+            mailRequest.EmailSubject = message.MessageSubject;
+            mailRequest.ReceiverMail = message.ReceiverEmail;
+            await SendEmail(mailRequest);
+
            
            
             
@@ -64,7 +72,7 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
         {
 
             MimeMessage mimeMessage = new MimeMessage();
-            MailboxAddress mailBoxAddressFrom = new MailboxAddress("Admin","pmerve948@gmail.com");//mailin kimden gittiğini gösterir. 1.parametre mail kim tarafından gönderildi. 2.parametre
+            MailboxAddress mailBoxAddressFrom = new MailboxAddress("Admin", "mysoftwareproject40@gmail.com");//mailin kimden gittiğini gösterir. 1.parametre mail kim tarafından gönderildi. 2.parametre
             //gönderilen mail adresi yani şifrsini aktif hale getirdiğimiz mail adresi
             mimeMessage.From.Add(mailBoxAddressFrom);//mailin kimden gönderileceği
             //bilgisini ekledik
@@ -80,7 +88,7 @@ namespace CrmUpSchool.UILayer.Areas.Employee.Controllers
             mimeMessage.Subject = mailRequest.EmailSubject;//mailin konusu
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("pmerve948@gmail.com", "tznhaomjgpdogioc");
+            client.Authenticate("mysoftwareproject40@gmail.com", "wicnautwssjvkdhu");
             //2.parametreye gmail hesabı izinden aldığımız key değerini veriyoruz
             client.Send(mimeMessage);//mimeMessage'ı gönder
             client.Disconnect(true);
