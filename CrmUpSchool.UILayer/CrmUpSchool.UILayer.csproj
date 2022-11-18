@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Employee\Data\" />
+    <Folder Include="wwwroot\UserImages\" />
   </ItemGroup>
 
 </Project>
