@@ -190,3 +190,9 @@ C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\b
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\bin\Debug\net5.0\MailKit.dll
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\Message\SendEmail.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\EmployeeProfile\EditEmployeeProfile.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Shared\Components\_HeadDashboardPartial\Default.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Shared\Components\_FeatureDashboardPartial\Default.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Shared\Components\_OverviewDashboardPartial\Default.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Shared\Components\_ChartDashboardPartial\Default.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Employee\Views\Chart\Index.cshtml.g.cs

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-7 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">Burası Grafik Alanıdır</p>
+               
+            </div>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(DrawonLoad);
+
+    function DrawonLoad() {
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Employee/Chart/DepartmentChart',
+                success: function (chartsdata) {
+
+                    var Data = chartsdata.jsonlist;
+                    var data = new google.visualization.DataTable();
+
+                    data.addColumn('string', 'departmentname');
+                    data.addColumn('number', 'salaryavg');
+
+                    for (var i = 0; i < Data.length; i++) {
+                        data.addRow([Data[i].departmentname, Data[i].salaryavg]);
+                    }
+
+                    var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+
+                    chart.draw(data,
+                        {
+                            title: "Google Chart Core Projesi",
+                            position: "top",
+                            fontsize: "16px"
+                        });
+                }
+            });
+        })
+    }
+
+</script>
+
+
