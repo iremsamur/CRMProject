@@ -9,6 +9,7 @@ namespace CrmUpSchool.EntityLayer.Concrete
     public class EmployeeTaskDetail
     {
         public int EmployeeTaskDetailID { get; set; }
+        //[Key] annotasyonu kullanmadığımız halde bunun primary key olarak algılanmasını sağlayan class içinde ID kelimesinin geçmesidir.
         public string Description { get; set; }
         public DateTime Date { get; set; }
         public int EmployeeTaskID { get; set; }

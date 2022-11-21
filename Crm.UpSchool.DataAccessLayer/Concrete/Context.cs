@@ -42,7 +42,8 @@ namespace Crm.UpSchool.DataAccessLayer.Concrete
 
 
         }
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }//migration tablosunun migration içine gelmesiin veritabanına yansıtılmasını burası sağlar.
+        //Buraya yazmadığımız entity'ler database'e yansıtılmaz.
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Employee> Employees
@@ -52,6 +53,7 @@ namespace Crm.UpSchool.DataAccessLayer.Concrete
         public DbSet<EmployeeTask> EmployeeTasks { get; set; }
         public DbSet<EmployeeTaskDetail> EmployeeTaskDetail { get; set; }
         public DbSet<Message> Messages{ get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
 
 
     }

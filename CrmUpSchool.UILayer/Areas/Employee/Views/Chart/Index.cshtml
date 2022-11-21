@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-md-7 grid-margin stretch-card">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" id="chartDiv">
                 <p class="card-title">Burası Grafik Alanıdır</p>
                
             </div>
@@ -14,7 +14,9 @@
     </div>
     
 </div>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://wwww.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1.0', { 'packages': ['corechart'] });</script>
 <script type="text/javascript">
 
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -28,13 +30,14 @@
                 success: function (chartsdata) {
 
                     var Data = chartsdata.jsonlist;
+                    debugger;
                     var data = new google.visualization.DataTable();
 
-                    data.addColumn('string', 'departmentname');
-                    data.addColumn('number', 'salaryavg');
+                    data.addColumn('string', 'departmentName');
+                    data.addColumn('number', 'salaryAvg');
 
                     for (var i = 0; i < Data.length; i++) {
-                        data.addRow([Data[i].departmentname, Data[i].salaryavg]);
+                        data.addRow([Data[i].departmentName, Data[i].salaryAvg]);
                     }
 
                     var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));

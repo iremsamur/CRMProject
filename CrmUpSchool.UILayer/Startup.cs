@@ -1,5 +1,6 @@
 using Crm.UpSchool.BusinessLayer.Abstract;
 using Crm.UpSchool.BusinessLayer.Concrete;
+using Crm.UpSchool.BusinessLayer.DIContainer;
 using Crm.UpSchool.DataAccessLayer.Abstract;
 using Crm.UpSchool.DataAccessLayer.Concrete;
 using Crm.UpSchool.DataAccessLayer.EntityFramework;
@@ -34,18 +35,9 @@ namespace CrmUpSchool.UILayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<ICategoryDal, EfCategoryDal>();
-            services.AddScoped<IEmployeeService, EmployeeManager>();
-            services.AddScoped<IEmployeeDal, EfEmployeeDal>();
-            services.AddScoped<IEmployeeTaskService, EmployeeTaskManager>();
-            services.AddScoped<IEmployeeTaskDal, EfEmployeeTaskDal>();
-            services.AddScoped<IEmployeeTaskDetailService, EmployeeTaskDetailManager>();
-            services.AddScoped<IEmployeeTaskDetailDal, EfEmployeeTaskDetailDal>();
-            services.AddScoped<IMessageService, MessageManager>();
-            services.AddScoped<IMessageDal, EfMessageDal>();
-            services.AddScoped<IAppUserService, AppUserManager>();
-            services.AddScoped<IAppUserDal, EfAppUserDal>();
+
+            services.Containerdependencies();
+            
             //Identity için aþaðýdakileri ekleriz
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar
