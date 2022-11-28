@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<h1>Müşteri Ajax İşlemleri</h1>
+<br />
+<button type="button" id="btncustomerlist" class="btn btn-outline-dark" style="display:inline-block;inline-size:200px;">Müşteri Listesi</button>
+<!--Butonları diğer form elemanlarından ayırt eden özellik id'leridir-->
+<button type="button" id="btncustomeradd" class="btn btn-outline-primary" style="display:inline-block;inline-size:200px;">Müşteri Ekle</button>
+<button type="button" id="btncustomerget" class="btn btn-outline-success" style="display:inline-block;inline-size:200px;">Müşteri Getir</button>
+<button type="button" id="btncustomerdelete" class="btn btn-outline-danger" style="display:inline-block;inline-size:200px;">Müşteri Sil</button>
+<button type="button" id="btncustomerupdate" class="btn btn-outline-warning" style="display:inline-block;inline-size:200px;">Müşteri Güncelle</button>
+<br />
+<br />
+
+<div id="customerlist">
+    <!--müşteri listesine tıklanınca müşterilerin geleceği alan burası-->
+</div>
+<br />
+<div class="form-group">
+    <!--ekleme işlemi-->
+    <input type="text" id="txtcustomername" placeholder="Müşteri Adını Giriniz" 
+    class="form-control"/>
+    
+    <br>
+    <input type="text" id="txtcustomersurname" placeholder="Müşteri Soyadını Giriniz" 
+           class="form-control" />
+           <br />
+    <input type="text" id="txtcustomermail" placeholder="Müşteri Mailini Giriniz" 
+           class="form-control" />
+           <br />
+    <input type="text" id="txtcustomerphone" placeholder="Müşteri Telefonunu Giriniz" 
+           class="form-control" />
+           <br />
+</div>
+<br />
+<!--id'ye göre listeleme için -->
+<div class="form-group">
+    <input  type="text" placeholder="Aranacak ID değerini Giriniz." id="txtid" class="form-control"/>
+
+</div>
+<br />
+<div id="customergetbyid">
+    <!--arananın bilgileri buraay gelecek-->
+</div>
+
+<script>
+    //listeleme işlemi ajax kodu
+    $("#btncustomerlist").click(function () {
+        //butona tıklandığında işlem yapsın 
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "get",
+            url: "/Admin/AdminCustomer/CustomerList/",
+            success: function (funk1) {
+                //eğer başarılı olursa
+                //funk1 isimli bir fonksiyon beni karşılasın
+                let values = jQuery.parseJSON(funk1); //gelen değeri html tarafında json'a dönüştür
+
+                console.log(values);
+                //dönen değerleri html tablosunda getirelim
+
+                let tablehtml = "<table class=table table-bordered> <tr><th>Müşteri ID</th><th>Müşteri Adı</th><th>Müşteri Soyadı</th><th>Müşteri Mail</th></tr>";
+                $.each(values,(index,item)=>{
+                    //each burada foreach görevi görüyor
+                    //item verileri aşağıda çağırmamızı sağlar
+                    tablehtml+=`<tr><td>${item.CustomerID}</td> <td>${item.CustomerName}</td> <td>${item.CustomerSurname}</td>
+                    <td>${item.CustomerMail}</td></tr>`
+                    //alt gr+; ile javascririptteki verileri çekebiliriz
+                    //{} içinde item. veritabanındaki kolonun adı
+
+                });
+                tablehtml+="</table>";
+                //verileri yansıtacağım yeri belirtiyorum
+                $("#customerlist").html(tablehtml);//tablehtml'den gelen tablo değerini
+                //bu id'si yazan div içinde gösterecek
+
+
+            }
+        });
+    });
+    //ekleme işlemi
+    $("#btncustomeradd").click(function(){
+        let customervalues={
+            CustomerName:$("#txtcustomername").val(),//html elemanına inputa girilen değeri alır
+            //modele atar. CustomerName modeldeki karşılığı entitydeki adı
+            CustomerSurname:$("#txtcustomersurname").val(),
+            CustomerMail: $("#txtcustomermail").val(),
+            CustomerPhone: $("#txtcustomerphone").val()
+
+
+        };
+        $.ajax({
+            type:"post",
+            url:"/Admin/AdminCustomer/AddCustomer/",//işlemi yapan controller url'ı
+            
+            data:customervalues,
+            success:function(funk2){
+                let result = JQuery.parseJSON(funk2);
+                alert("Müşteri başarılı bir şekilde eklendi.");
+            }
+        });
+    });
+    //id'ye göre getirme
+    $("#btncustomerget").click(x=>{
+        let id=$("#txtid").val();
+        $.ajax({
+            contentType:"application/json",
+            dataType:"json",
+            type:"get",
+            url:"/Admin/AdminCustomer/GetByID/",
+            data:{CustomerID:id},//bu CustomerID hem sql'deki hemde GetBYID metodundaki
+            //parametredeki id oluyor
+            success:function(funk1){
+                let result = jQuery.parseJSON(funk3);
+                console.log(result);
+                //bunları html olarak tabloya gelen veriyi yansıtalım
+                let tablehtml2=`<table class=table table-bordered> <tr><th>Müşteri ID</th>
+                <th>Müşteri Adı</th><th>Müşteri soyadı</th></tr><tr><td>${result.CustomerID}
+                </td><td>${result.CustomerName}</td><td>${result.CustomerSurname}</td></tr>
+                </table>
+                `;
+                $("#customergetbyid").html(tablehtml2);
+            }
+
+        })
+
+    })
+
+
+
+
+</script>

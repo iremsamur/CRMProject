@@ -1,5 +1,7 @@
-﻿using Crm.UpSchool.DataAccessLayer.Abstract;
+﻿using Crm.UpSchool.BusinessLayer.Abstract;
+using Crm.UpSchool.DataAccessLayer.Abstract;
 using CrmUpSchool.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace Crm.UpSchool.BusinessLayer.Concrete
 {
-    public class CustomerManager : ICustomerDal
+    
+    public class CustomerManager : ICustomerService
     {
         ICustomerDal _customerDal;
 
@@ -17,27 +20,27 @@ namespace Crm.UpSchool.BusinessLayer.Concrete
             _customerDal = customerDal;
         }
 
-        public void Delete(Customer t)
+        public void TDelete(Customer t)
         {
             _customerDal.Delete(t);
         }
 
-        public Customer GetByID(int id)
+        public Customer TGetByID(int id)
         {
             return _customerDal.GetByID(id);
         }
 
-        public List<Customer> GetList()
+        public List<Customer> TGetList()
         {
             return _customerDal.GetList();
         }
 
-        public void Insert(Customer t)
+        public void TInsert(Customer t)
         {
             _customerDal.Insert(t);
         }
 
-        public void Update(Customer t)
+        public void TUpdate(Customer t)
         {
             _customerDal.Update(t);
         }
