@@ -15,6 +15,8 @@
 <button type="button" id="btncustomerdelete" class="btn btn-outline-danger" style="display:inline-block;inline-size:200px;">Müşteri Sil</button>
 <button type="button" id="btncustomerupdate" class="btn btn-outline-warning" style="display:inline-block;inline-size:200px;">Müşteri Güncelle</button>
 <br />
+<button type="button" id="btnsweet" class="btn btn-outline-info" style="display:inline-block;inline-size:200px;">Sweet Button</button>
+
 <br />
 
 <div id="customerlist">
@@ -47,6 +49,25 @@
 <div id="customergetbyid">
     <!--arananın bilgileri buraay gelecek-->
 </div>
+<div>
+    <input type="text" class="form-control" id="txtdeleteid" placeholder="Silinecek ID değerini giriniz."/>
+</div>
+<br />
+<div class="form-group">
+    <h4>Güncelleme Paneli</h4>
+    <br />
+    <input type="text" class="form-control" id="txteditid" placeholder="Güncellenecek ID" />
+    <br />
+    <input type="text" class="form-control" id="txtname" placeholder="Güncellenecek Adınız"/>
+    <br />
+    <input type="text" class="form-control" id="txtsurname" placeholder="Güncellenecek Soyadınız" />
+    <br />
+
+    <input type="text" class="form-control" id="txtmail" placeholder="Güncellenecek Mailiniz" />
+    <br />
+    <input type="text" class="form-control" id="txtphone" placeholder="Güncellenecek Telefonunuz" />
+
+</div>
 
 <script>
     //listeleme işlemi ajax kodu
@@ -69,7 +90,7 @@
                 $.each(values,(index,item)=>{
                     //each burada foreach görevi görüyor
                     //item verileri aşağıda çağırmamızı sağlar
-                    tablehtml+=`<tr><td>${item.CustomerID}</td> <td>${item.CustomerName}</td> <td>${item.CustomerSurname}</td>
+                    tablehtml+=`<tr><td id=customerID>${item.CustomerID}</td> <td>${item.CustomerName}</td> <td>${item.CustomerSurname}</td>
                     <td>${item.CustomerMail}</td></tr>`
                     //alt gr+; ile javascririptteki verileri çekebiliriz
                     //{} içinde item. veritabanındaki kolonun adı
@@ -131,6 +152,43 @@
         })
 
     })
+    //silme işlemi
+    $("#btncustomerdelete").click(x=>{
+        let id=$("#txtdeletedid").val();
+        $.ajax({
+            url : "/Admin/AdminCustomer/DeleteCustomer/"+id;
+            type:"get",
+            contentType:"application/json",
+            dataType:"json",
+            success:function(funk4){
+                alert("Müşteri Başarılı Bir Şekilde Silindi.")
+            }
+        });
+    });
+
+
+    //güncelleme işlemi
+    $("#btncustomerupdate").click(function(){
+        //var value = $("#customerID").val();
+        let value={
+        CustomerID: $("#txteditid").val(),
+        CustomerName:$("#txtname").val(),
+        CustomerSurname:$("txtsurname").val(),
+        CustomerPhone:$("txtphone").val(),
+        CustomerMail: $("txtmail").val()
+        };
+        
+        $.ajax({
+            type:"get",
+            url:"/Admin/AdminCustomer/UpdateCustomer/",
+            data:values,
+            success:function(funkS){
+                alert("Güncelleme İşlemi yapıldı");
+            }
+        });
+
+    });
+
 
 
 

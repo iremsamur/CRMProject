@@ -312,6 +312,33 @@ namespace Crm.UpSchool.DataAccessLayer.Migrations
                     b.ToTable("Messages");
                 });
 
+            modelBuilder.Entity("CrmUpSchool.EntityLayer.Concrete.Supplier", b =>
+                {
+                    b.Property<int>("SupplierID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("SupplierCity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupplierCompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupplierMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupplierPersonName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupplierPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SupplierID");
+
+                    b.ToTable("Suppliers");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+}
+
+<script src="c:\users\user\desktop\upschoolbootcamp\crmupschool.uilayer\crmupschool.uilayer\wwwroot\lib\jquery\dist\jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<br />
+
+<button id="btn1" style="display:inline-block;inline-size:150px;">Button 1</button>
+<br />
+<button id="btn2" style="display:inline-block;inline-size:150px;">Button 2</button>
+<script>
+    $("#btn1").click(function(){
+        swal("Hello World");
+    });
+    $("#btn1").click(function () {
+        swal("Başarılı Ekeleme!","Tebrikler!","success");
+    });
+</script>

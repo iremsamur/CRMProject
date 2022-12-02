@@ -46,5 +46,20 @@ namespace CrmUpSchool.UILayer.Areas.Admin.Controllers
 
 
         }
+        //ajax ile silme işlemi
+        public IActionResult DeleteCustomer(int id)
+        {
+            var values = _customerService.TGetByID(id);
+            _customerService.TDelete(values);
+            return Json(values);
+        }
+        //güncelleme işlemi
+        public IActionResult UpdateCustomer(Customer customer)
+        {
+             _customerService.TUpdate(customer);
+            var values = JsonConvert.SerializeObject(customer);
+            return Json(values);
+        }
+
     }
 }
