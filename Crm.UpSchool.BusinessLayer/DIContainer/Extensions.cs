@@ -1,7 +1,10 @@
 ﻿using Crm.UpSchool.BusinessLayer.Abstract;
 using Crm.UpSchool.BusinessLayer.Concrete;
+using Crm.UpSchool.BusinessLayer.ValidationRules.ContactValidation;
 using Crm.UpSchool.DataAccessLayer.Abstract;
 using Crm.UpSchool.DataAccessLayer.EntityFramework;
+using Crm.UpSchool.DTOLayer.DTOs.ContactDTOs;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -37,6 +40,18 @@ namespace Crm.UpSchool.BusinessLayer.DIContainer
             services.AddScoped<ICustomerDal, EfCustomerDal>();
             services.AddScoped<ISupplierService, SupplierManager>();
             services.AddScoped<ISupplierDal, EfSupplierDal>();
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<IContactDal, EfContactDal>();
+
+        }
+        //Automapper için 
+        public static void CustomizeValidator(this IServiceCollection services)
+        {
+            //DTO ve onun ilgili validator eşleştirmelerini burada yazıp tanımlıyoruz
+            services.AddTransient<IValidator<ContactAddDTO>, ContactAddValidator>();
+            services.AddTransient<IValidator<ContactUpdateDTO>, ContactUpdateValidator>();
+
+
 
         }
     }

@@ -56,6 +56,7 @@ namespace Crm.UpSchool.DataAccessLayer.Concrete
         public DbSet<Announcement> Announcements { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
 
     }

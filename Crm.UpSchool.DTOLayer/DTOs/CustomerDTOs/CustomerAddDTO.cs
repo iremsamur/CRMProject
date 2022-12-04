@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crm.UpSchool.DTOLayer.SupplierDTOs
+namespace Crm.UpSchool.DTOLayer.DTOs.CustomerDTOs
 {
-    public class SupplierUpdateDTO
+    public class CustomerAddDTO
     {
     }
 }

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "wqzAu7fqvTESQbrAXpjxCNPgyEGTNfYBg/Q/WIYTsG5zOxXAOykbT2uuHUsj4wdawP77FJCS+QE0bS8SLfO5Lw==",
+  "dgSpecHash": "9H3Fas6vFN4CFolvZOcg2NmIGESljUIX+0G0jQ134jo1gc6iQVbRswKbv9YYTWe/FxClECXEJxdIdKbv9Hx51Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\CrmUpSchool.UILayer\\Crm.UpSchool.BusinessLayer\\Crm.UpSchool.BusinessLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.expressionmapping\\5.1.0\\automapper.extensions.expressionmapping.5.1.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.1\\automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",

@@ -1,3 +1,4 @@
+using AutoMapper;
 using Crm.UpSchool.BusinessLayer.Abstract;
 using Crm.UpSchool.BusinessLayer.Concrete;
 using Crm.UpSchool.BusinessLayer.DIContainer;
@@ -6,6 +7,7 @@ using Crm.UpSchool.DataAccessLayer.Concrete;
 using Crm.UpSchool.DataAccessLayer.EntityFramework;
 using CrmUpSchool.EntityLayer.Concrete;
 using CrmUpSchool.UILayer.Models;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,7 +43,17 @@ namespace CrmUpSchool.UILayer
             //Identity için aþaðýdakileri ekleriz
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();//AddEntityFrameworkStores entity framework içinde kullanmamýzý saðlar
-            services.AddControllersWithViews();
+
+            //Automapper için yapýlandýrmayý buraya yazýyoruz
+            //Type of Startup
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.CustomizeValidator();//DI içindek, atomapper için yazdýðýmýz method
+
+
+            services.AddControllersWithViews().AddFluentValidation();
+            //AddControllers with view'in sonuna AddFluentValidation() metodunu ekliyoruz. Bunu ekleme sebebimiz validasyonlarý gösterebilmesi
 
             services.AddMvc(config =>
             {

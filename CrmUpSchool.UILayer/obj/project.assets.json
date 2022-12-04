@@ -2,6 +2,55 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "AutoMapper/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.ExpressionMapping/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[11.0.0, 12.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "ClosedXML/0.97.0": {
         "type": "package",
         "dependencies": {
@@ -3954,6 +4003,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Crm.UpSchool.DTOLayer": "1.0.0",
           "Crm.UpSchool.DataAccessLayer": "1.0.0",
           "CrmUpSchool.EntityLayer": "1.0.0",
           "FluentValidation.AspNetCore": "11.2.2",
@@ -3984,6 +4034,20 @@
           "bin/placeholder/Crm.UpSchool.DataAccessLayer.dll": {}
         }
       },
+      "Crm.UpSchool.DTOLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AutoMapper.Extensions.ExpressionMapping": "5.1.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Crm.UpSchool.DTOLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.UpSchool.DTOLayer.dll": {}
+        }
+      },
       "CrmUpSchool.EntityLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -4003,6 +4067,48 @@
     }
   },
   "libraries": {
+    "AutoMapper/11.0.0": {
+      "sha512": "+596AnKykYCk9RxXCEF4GYuapSebQtFVvIA1oVG1rrRkCLAC7AkWehJ0brCfYUbdDW3v1H/p0W3hob7JoXGjMw==",
+      "type": "package",
+      "path": "automapper/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.11.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.ExpressionMapping/5.1.0": {
+      "sha512": "o62czvnBm4qYkpMBaCT1VNzxcgTPYS+a3IInfE2HQgUFYtMJreYyEhpR6etiPZes0VBxewaU1rvWEwpvPeAygg==",
+      "type": "package",
+      "path": "automapper.extensions.expressionmapping/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.expressionmapping.5.1.0.nupkg.sha512",
+        "automapper.extensions.expressionmapping.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.dll",
+        "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+      "sha512": "7MIq6D/ax3964iHXbL1L2ldUvl6IlKp0p1GZFzr6vlIhEVyp4CgJwOpisRLvIO7dP+kDtbY3Hb9yuPNCkfyBFg==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/5.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
     "ClosedXML/0.97.0": {
       "sha512": "L+uiMgnyd5s11YSGmPWmJ30Rg57BNqgOxabfYmFaqVjqOGM5TQv2olc9E/1qiEZzxyR8pgFIGAEcK4yFzN2S6g==",
       "type": "package",
@@ -11462,6 +11568,11 @@
       "path": "../Crm.UpSchool.DataAccessLayer/Crm.UpSchool.DataAccessLayer.csproj",
       "msbuildProject": "../Crm.UpSchool.DataAccessLayer/Crm.UpSchool.DataAccessLayer.csproj"
     },
+    "Crm.UpSchool.DTOLayer/1.0.0": {
+      "type": "project",
+      "path": "../Crm.UpSchool.DTOLayer/Crm.UpSchool.DTOLayer.csproj",
+      "msbuildProject": "../Crm.UpSchool.DTOLayer/Crm.UpSchool.DTOLayer.csproj"
+    },
     "CrmUpSchool.EntityLayer/1.0.0": {
       "type": "project",
       "path": "../CrmUpSchool.EntityLayer/CrmUpSchool.EntityLayer.csproj",
@@ -11472,6 +11583,7 @@
     "net5.0": [
       "ClosedXML >= 0.97.0",
       "Crm.UpSchool.BusinessLayer >= 1.0.0",
+      "Crm.UpSchool.DTOLayer >= 1.0.0",
       "Crm.UpSchool.DataAccessLayer >= 1.0.0",
       "CrmUpSchool.EntityLayer >= 1.0.0",
       "EPPlus.Core >= 1.5.4",
@@ -11525,6 +11637,9 @@
             },
             "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\CrmUpSchool.UILayer\\Crm.UpSchool.DataAccessLayer\\Crm.UpSchool.DataAccessLayer.csproj": {
               "projectPath": "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\CrmUpSchool.UILayer\\Crm.UpSchool.DataAccessLayer\\Crm.UpSchool.DataAccessLayer.csproj"
+            },
+            "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\CrmUpSchool.UILayer\\Crm.UpSchool.DTOLayer\\Crm.UpSchool.DTOLayer.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\CrmUpSchool.UILayer\\Crm.UpSchool.DTOLayer\\Crm.UpSchool.DTOLayer.csproj"
             },
             "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\CrmUpSchool.UILayer\\CrmUpSchool.EntityLayer\\CrmUpSchool.EntityLayer.csproj": {
               "projectPath": "C:\\Users\\User\\Desktop\\UpSchoolBootcamp\\CrmUpSchool.UILayer\\CrmUpSchool.EntityLayer\\CrmUpSchool.EntityLayer.csproj"

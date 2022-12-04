@@ -47,6 +47,10 @@
             "AutoMapper.Extensions.ExpressionMapping": {
               "target": "Package",
               "version": "[5.1.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             }
           },
           "imports": [

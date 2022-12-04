@@ -1,0 +1,34 @@
+﻿using Crm.UpSchool.DTOLayer.DTOs.ContactDTOs;
+using CrmUpSchool.EntityLayer.Concrete;
+using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Crm.UpSchool.BusinessLayer.ValidationRules.ContactValidation
+{
+    public class ContactAddValidator:AbstractValidator<ContactAddDTO>
+        //Sadece benim yazdığım modeli karşılayacak entity classına işlem gerçekleştirmesi için ContactAddDTO'yu yazıyorum.
+    {
+        //ekleme, güncelleme vb. başka işlemlerde farklı validasyonlar olduğu için her biri için ayrı validasyon sınıfı yazıyoruz. Yani bir entity için birden fazla
+        //validasyon sınıfları yazıyoruz.
+        public ContactAddValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Ad boş geçilemez!");
+            RuleFor(x => x.Mail).NotEmpty().WithMessage("Mail boş geçilemez!");
+            RuleFor(x => x.Subject).NotEmpty().WithMessage("Konu boş geçilemez!");
+            RuleFor(x => x.Content).NotEmpty().WithMessage("Konu boş geçilemez!");
+            RuleFor(x => x.Name).MinimumLength(5).WithMessage("Lütfen en az 5 karakter veri girişi yapınız!");
+            RuleFor(x => x.Subject).MinimumLength(5).WithMessage("Lütfen en az 5 karakter veri girişi yapınız!");
+            RuleFor(x => x.Name).MaximumLength(5).WithMessage("Lütfen en fazla 50karakter veri girişi yapınız!");
+               RuleFor(x => x.Name).MaximumLength(50).WithMessage("Lütfen en fazla 50 karakter veri girişi yapınız!");
+            RuleFor(x => x.Subject).MaximumLength(100).WithMessage("Lütfen en fazla 100 karakter veri girişi yapınız!");
+
+        }
+
+
+
+    }
+}

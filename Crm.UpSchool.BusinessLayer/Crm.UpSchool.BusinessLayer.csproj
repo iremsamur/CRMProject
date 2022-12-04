@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Crm.UpSchool.DataAccessLayer\Crm.UpSchool.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Crm.UpSchool.DTOLayer\Crm.UpSchool.DTOLayer.csproj" />
     <ProjectReference Include="..\CrmUpSchool.EntityLayer\CrmUpSchool.EntityLayer.csproj" />
   </ItemGroup>
 

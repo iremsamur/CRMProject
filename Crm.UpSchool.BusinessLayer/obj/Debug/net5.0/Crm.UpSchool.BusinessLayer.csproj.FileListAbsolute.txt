@@ -18,3 +18,5 @@ C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.Business
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.BusinessLayer\obj\Debug\net5.0\Crm.UpSchool.BusinessLayer.pdb
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.BusinessLayer\obj\Debug\net5.0\Crm.UpSchool.BusinessLayer.genruntimeconfig.cache
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.BusinessLayer\obj\Debug\net5.0\ref\Crm.UpSchool.BusinessLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.BusinessLayer\bin\Debug\net5.0\Crm.UpSchool.DTOLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.BusinessLayer\bin\Debug\net5.0\Crm.UpSchool.DTOLayer.pdb

@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\bin\Debug\net5.0\Crm.UpSchool.DTOLayer.deps.json
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\bin\Debug\net5.0\Crm.UpSchool.DTOLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\bin\Debug\net5.0\Crm.UpSchool.DTOLayer.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\Crm.UpSchool.DTOLayer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\Crm.UpSchool.DTOLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\Crm.UpSchool.DTOLayer.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\Crm.UpSchool.DTOLayer.AssemblyInfo.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\Crm.UpSchool.DTOLayer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\Crm.UpSchool.DTOLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\refint\Crm.UpSchool.DTOLayer.dll
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\Crm.UpSchool.DTOLayer.pdb
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\Crm.UpSchool.DTOLayer\obj\Debug\net5.0\ref\Crm.UpSchool.DTOLayer.dll
