@@ -25,6 +25,7 @@ namespace CrmUpSchool.EntityLayer.Concrete
         {
             get; set;
         }
+        public string EmailConfirmedControlCode { get; set; }
         public List<EmployeeTask> EmployeeTasksFollower { get; set; }
         public List<EmployeeTask> EmployeeTasksAssignee { get; set; }
     }

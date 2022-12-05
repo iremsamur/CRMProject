@@ -1,0 +1,26 @@
+﻿@model AppUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmailConfirmPage</title>
+</head>
+<body>
+    <h1>Mail Onayı</h1>
+    <form method="post">
+
+        <label>Mail AdresinizL</label>
+        <input type="text" asp-for="Email" class="form-control" />
+
+        <label>Mail Onay Kodu</label>
+        <input type="text" asp-for="EmailConfirmedControlCode" class="form-control" />
+
+        <button type="submit">Onayla</button>
+    </form>
+</body>
+</html>

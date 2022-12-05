@@ -1,0 +1,21 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+}
+
+<h1>Kullanıcı Listesi</h1>
+<table class="table table-striped">
+    <tr>
+        <th>Kullanıcı Adı</th>
+        <th>Rol Ata</th>
+    </tr>
+    @foreach(var item in Model){
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+        </tr>
+    }
+
+</table>
+

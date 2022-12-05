@@ -1,40 +1,73 @@
-﻿using CrmUpSchool.EntityLayer.Concrete;
+﻿using Crm.UpSchool.BusinessLayer.Abstract;
+using Crm.UpSchool.DataAccessLayer.Abstract;
+using CrmUpSchool.EntityLayer.Concrete;
+using CrmUpSchool.UILayer.Areas.Employee.Models;
 using CrmUpSchool.UILayer.Models;
+using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Numeric;
 using System;
 using System.Threading.Tasks;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly IAppUserService _appUserService;
 
-        public RegisterController(UserManager<AppUser> userManager)
+      
+
+        public RegisterController(UserManager<AppUser> userManager,IAppUserService appUserService)
         {
             _userManager = userManager;
+            _appUserService = appUserService;
         }
-
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult EmailConfirmPage()
         {
             return View();
+
         }
         [HttpPost]
-        public async Task<IActionResult> Index(AppUser appUser)
+        public async Task<IActionResult> EmailConfirmedPage(AppUser appUser)
         {
-            var result = await _userManager.CreateAsync(appUser,appUser.PasswordHash);//bu metod yeni bir kullanıcı değeri oluşturacak. Bir kullanıcı ve şifre istiyor
-            //await burada beklemeden çalışmasını sağlar.
-            bool check = result.Succeeded;
-            if (result.Succeeded)
+            var user = await _userManager.FindByEmailAsync(appUser.Email);
+            if (user.EmailConfirmedControlCode == appUser.EmailConfirmedControlCode)
             {
-                ViewBag.registerIsSucceeded = true;
+                user.EmailConfirmed = true;
+
+                var result = await _userManager.UpdateAsync(user);
                 return RedirectToAction("Index", "Login");
             }
-        
-
             return View();
+        }
+      
+        public void SendEmail(string emailAddress,string emailcode)
+        {
+            MimeMessage mimeMessage = new MimeMessage();
+
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "mysoftwareproject40@gmail.com");
+            mimeMessage.From.Add(mailboxAddressFrom); //Maili gönderen
+
+            MailboxAddress mailboxAddressTo = new MailboxAddress("User", emailAddress);
+            mimeMessage.To.Add(mailboxAddressTo); //mail gönderilecek kişi
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = emailcode;
+            mimeMessage.Body = bodyBuilder.ToMessageBody(); //Mail içeriği
+
+            mimeMessage.Subject = "Üyelik Kaydı"; //Mail konusu
+
+            SmtpClient client = new SmtpClient(); 
+            client.Connect("smtp.gmail.com", 587, false);
+            client.Authenticate("mysoftwareproject40@gmail.com", "wicnautwssjvkdhu");
+            client.Send(mimeMessage);
+            client.Disconnect(true);
         }
 
         //Register
@@ -47,6 +80,9 @@ namespace CrmUpSchool.UILayer.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUp(UserSignUpModel userSignUp)
         {
+            Random rnd = new Random();
+            string code = rnd.Next(10000, 999999).ToString();
+
             if (ModelState.IsValid)
             {
                 AppUser appUser = new AppUser()
@@ -55,7 +91,8 @@ namespace CrmUpSchool.UILayer.Controllers
                     Name = userSignUp.Name,
                     Surname = userSignUp.Surname,
                     Email = userSignUp.Email,
-                    PhoneNumber = userSignUp.PhoneNumber
+                    PhoneNumber = userSignUp.PhoneNumber,
+                    EmailConfirmedControlCode=code
                 };
                 if (userSignUp.Password == userSignUp.ConfirmPassword)
                 {
@@ -63,7 +100,10 @@ namespace CrmUpSchool.UILayer.Controllers
                     var result = await _userManager.CreateAsync(appUser, userSignUp.Password);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Login");
+                        SendEmail(userSignUp.Email,code);
+                        return RedirectToAction("EmailConfirmPage", "Register");
+                        //sendEmailConfirmedEmailCode(appUser.Email);
+
                     }
                     else
                     {

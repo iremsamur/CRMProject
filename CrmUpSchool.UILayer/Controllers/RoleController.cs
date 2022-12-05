@@ -1,5 +1,6 @@
 ﻿using CrmUpSchool.EntityLayer.Concrete;
 using CrmUpSchool.UILayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -8,13 +9,17 @@ using System.Xml.Xsl;
 
 namespace CrmUpSchool.UILayer.Controllers
 {
+    [AllowAnonymous]
     public class RoleController : Controller
     {
+        //rol işlemleri için RoleManager kullanılır
         private readonly RoleManager<AppRole> _roleManager;
+        private readonly UserManager<AppUser> _userManager;
 
-        public RoleController(RoleManager<AppRole> roleManager)
+        public RoleController(RoleManager<AppRole> roleManager, UserManager<AppUser> userManager)
         {
             _roleManager = roleManager;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -64,6 +69,31 @@ namespace CrmUpSchool.UILayer.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+        //güncelleme
+        [HttpGet]
+        public IActionResult UpdateRole(int ID)
+        {
+            var values = _roleManager.Roles.FirstOrDefault(x=>x.Id==ID);
+            return View(values);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateRole(AppRole appRole)
+        {
+            var values = _roleManager.Roles.FirstOrDefault(x => x.Id == appRole.Id);
+            values.Name = appRole.Name;
+
+            var result = await _roleManager.UpdateAsync(values);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        public IActionResult UserList()
+        {
+            var values = _userManager.Users.ToList();
+            return View(values);
         }
 
     }

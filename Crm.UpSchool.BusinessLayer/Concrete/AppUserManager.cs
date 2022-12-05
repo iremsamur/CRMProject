@@ -45,7 +45,7 @@ namespace Crm.UpSchool.BusinessLayer.Concrete
 
         public void TUpdate(AppUser t)
         {
-            throw new NotImplementedException();
+            _appUserDal.Update(t);
         }
     }
 }

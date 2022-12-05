@@ -1,0 +1,18 @@
+﻿@model AppRole
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/Shared/_CrmLayout.cshtml";
+}
+
+<h1>UpdateRole</h1>
+<h1>Rol Ekleme Sayfası</h1>
+<form method="post">
+    <input type="hidden" asp-for="Id"/>
+    <label>Rol Adı</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span class="text-danger" asp-validation-for="Name"></span>
+    <br />
+    <button class="btn btn-warning">Rolü Güncelle</button>
+
+</form>
+
