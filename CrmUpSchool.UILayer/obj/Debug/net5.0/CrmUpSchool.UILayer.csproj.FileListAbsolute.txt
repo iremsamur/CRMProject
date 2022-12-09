@@ -231,3 +231,5 @@ C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\o
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Register\ConfirmPage.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Register\EmailConfirmPage.cshtml.g.cs
 C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\UpdateRole.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\UserList.cshtml.g.cs
+C:\Users\User\Desktop\UpSchoolBootcamp\CrmUpSchool.UILayer\CrmUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\AssignRole.cshtml.g.cs
