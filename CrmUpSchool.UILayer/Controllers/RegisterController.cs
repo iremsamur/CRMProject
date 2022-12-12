@@ -51,7 +51,7 @@ namespace CrmUpSchool.UILayer.Controllers
         {
             MimeMessage mimeMessage = new MimeMessage();
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "mysoftwareproject40@gmail.com");
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "fromEmailAddress");
             mimeMessage.From.Add(mailboxAddressFrom); //Maili gönderen
 
             MailboxAddress mailboxAddressTo = new MailboxAddress("User", emailAddress);
@@ -65,7 +65,7 @@ namespace CrmUpSchool.UILayer.Controllers
 
             SmtpClient client = new SmtpClient(); 
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("mysoftwareproject40@gmail.com", "wicnautwssjvkdhu");
+            client.Authenticate("fromEmailAddress", "emailKey");
             client.Send(mimeMessage);
             client.Disconnect(true);
         }
